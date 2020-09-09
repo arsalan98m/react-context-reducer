@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Parent from "./Parent";
+import CounterContext from "./CounterContext";
 
 function App() {
+  let state = useState(1);
   return (
-    <div>
-      <Parent name="arsalan" />
-    </div>
+    <CounterContext.Provider value={state}>
+      <div className="App">
+        <Parent />
+      </div>
+    </CounterContext.Provider>
   );
 }
 
